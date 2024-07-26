@@ -1,0 +1,83 @@
+{
+  "name": "swiff-4",
+  "version": "8.0.4",
+  "main": "build/index.js",
+  "type": "module",
+  "description": "Swiff saves you time with common SSH tasks during the development of websites/apps",
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@babel/preset-react": "^7.24.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.14.3",
+    "rollup-plugin-polyfill-node": "^0.13.0"
+  },
+  "scripts": {
+    "start": "node build/index.js",
+    "compile": "rm -rf dist && babel src --out-dir dist/index.js",
+    "compile-bundle": "rollup -c",
+    "build:module": "npm run compile-bundle",
+    "build": "npm run compile-bundle",
+    "postbuild": "node  build/index.js ",
+    "prebuild": "rm -rf build",
+    "pre-publish": "npm run build"
+  },
+  "keywords": [
+    "developer-tools",
+    "development-environment",
+    "web-tools",
+    "command-line-tool",
+    "command-line-app",
+    "staging-tool"
+  ],
+  "bugs": {
+    "url": "https://github.com/burgerbuds/swiff/issues"
+  },
+  "homepage": "https://github.com/burgerbuds/swiff#readme",
+  "bin": {
+    "swiff-4": "build/index.js"
+  },
+  "files": [
+    "tsconfig.json",
+    "swiff-4.d.ts",
+    "types/*",
+    "build/*",
+    "backups/*",
+    "resources/*",
+    "package.json",
+    "node_modules",
+    "readme.md"
+  ],
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "ink": "^4.4.1",
+    "ink-big-text": "^2.0.0",
+    "ink-select-input": "^5.0.0",
+    "ink-spinner": "^5.0.0",
+    "ink-tab": "^5.0.0",
+    "ink-task-list": "^2.0.0",
+    "lodash-es": "^4.17.21",
+    "lodash.get": "^4.4.2",
+    "node-ssh": "^13.1.0",
+    "pino": "^9.1.0",
+    "pino-pretty": "^11.2.0",
+    "promise-mysql": "^5.2.0",
+    "react": "^18.2.0",
+    "semver": "^7.6.0",
+    "terminal-link": "^3.0.0",
+    "timers-promises": "^1.0.1",
+    "update-notifier": "^7.0.0",
+    "username": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=15"
+  },
+  "engineStrict": true,
+  "browserslist": "> 0.25%, not dead"
+}
